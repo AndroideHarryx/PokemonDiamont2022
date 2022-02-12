@@ -44,6 +44,6 @@ class LoginActivity : AppCompatActivity() {
         return esCorrecto
     }
     private fun registrarse(){
-        
+
     }
 }
