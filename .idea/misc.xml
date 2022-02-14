@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/drawable/fondobienvenida.xml" value="0.154" />
+        <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/activity_contiene_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/activity_contiene_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/activity_pokemon_host.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/fragment_header_trainer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/fragment_menu_trainer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/layout/header_trainer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Marce/Desktop/Repository/PokemonDiamont2022/app/src/main/res/menu/menu_trainer.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

@@ -4,15 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/fondobienvenida">
 
     <TextView
+        android:id="@+id/txt_log_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Inicio de Sesión"
+        android:gravity="center"
+        android:textSize="120px"
+        android:textColor="@color/white"
+        android:fontFamily="@font/fontbienvenido"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_log_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:hint="Usuario"
+        android:textSize="60px"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/txt_log_titulo"
+        app:layout_constraintRight_toRightOf="@id/txt_log_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_log_titulo" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_log_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:hint="Contraseña"
+        android:textSize="60px"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/txt_log_usuario"
+        app:layout_constraintRight_toRightOf="@id/txt_log_usuario"
+        app:layout_constraintTop_toBottomOf="@+id/txt_log_usuario" />
+
+    <Button
+        android:id="@+id/btn_log_inicia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicia Sesión"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/txt_log_password"
+        app:layout_constraintRight_toRightOf="@id/txt_log_password"
+        app:layout_constraintTop_toBottomOf="@+id/txt_log_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

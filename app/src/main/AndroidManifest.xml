@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokemonDiamont2022">
         <activity
-            android:name=".ContieneMenu"
+            android:name=".ContieneFragment"
             android:exported="false" />
         <activity
             android:name=".PokemonHostActivity"
