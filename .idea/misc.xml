@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/drawable/ic_baseline_3p_24.xml" value="0.1" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/drawable/ic_baseline_accessible_forward_24.xml" value="0.1" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/activity_pokemon_host.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/fragment_bienvenido.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/fragment_pokedex.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/nav_card.xml" value="0.1" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/layout/nav_head.xml" value="0.182518115942029" />
+        <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Git/PokemonDiamont2022/app/src/main/res/menu/nav_drav.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

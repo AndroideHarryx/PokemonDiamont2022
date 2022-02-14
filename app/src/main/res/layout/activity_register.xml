@@ -4,6 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondopokemon"
     tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/newuser"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:hint="Usuario"
+        android:paddingLeft="30dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/newpass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="monospace"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="30dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newuser" />
+
+    <Button
+        android:id="@+id/registeruser"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="128dp"
+        android:gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="Register"
+        android:textColor="@color/white"
+
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newpass" />
+
+    <Button
+        android:id="@+id/logback"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="128dp"
+        android:gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="Log"
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registeruser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
