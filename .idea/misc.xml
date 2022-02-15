@@ -5,7 +5,14 @@
       <map>
         <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/drawable/button_rounded.xml" value="0.1585" />
         <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/drawable/button_rounded_border.xml" value="0.1585" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/drawable/ic_baseline_home.xml" value="0.142" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/drawable/ic_baseline_message.xml" value="0.142" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/drawable/ic_baseline_rate_review.xml" value="0.142" />
         <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/layout/activity_pokemon_host.xml" value="0.25" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/layout/nav_header.xml" value="0.33" />
+        <entry key="..\:/2022/Bootcamp/as-projs/PokemonDiamont2022/app/src/main/res/menu/nav_menu.xml" value="0.22" />
       </map>
     </option>
   </component>

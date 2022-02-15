@@ -20,7 +20,9 @@ abstract class AppDatabase : RoomDatabase() {
                 synchronized (AppDatabase::class.java) {
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(context.applicationContext,
-                            AppDatabase::class.java, "pokedb").build()
+                            AppDatabase::class.java, "pokedb")
+                            .allowMainThreadQueries()
+                            .build()
                     }
                 }
             }
