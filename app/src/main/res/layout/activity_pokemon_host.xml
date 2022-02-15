@@ -10,6 +10,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contiene_Recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,14 +21,13 @@
             android:text="Bienvenido.."
             android:gravity="center"
             android:textSize="120px"
-            android:layout_marginTop="160dp"
             android:textColor="@color/white"
             android:fontFamily="@font/fontbienvenido"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -38,5 +38,4 @@
         app:menu="@menu/menu_trainer"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"/>
-
 </androidx.drawerlayout.widget.DrawerLayout>
