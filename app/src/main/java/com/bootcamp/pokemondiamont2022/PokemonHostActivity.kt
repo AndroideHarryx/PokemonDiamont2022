@@ -2,12 +2,10 @@ package com.bootcamp.pokemondiamont2022
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
-import com.bootcamp.pokemondiamont2022.models.PokemonModels
 import com.google.android.material.navigation.NavigationView
 
 class PokemonHostActivity : AppCompatActivity(){
@@ -21,7 +19,6 @@ class PokemonHostActivity : AppCompatActivity(){
         setContentView(R.layout.activity_pokemon_host)
         drawerLayout=findViewById(R.id.drawerLayout)
         navView=findViewById(R.id.navView)
-
 
         toggle= ActionBarDrawerToggle(this,drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
