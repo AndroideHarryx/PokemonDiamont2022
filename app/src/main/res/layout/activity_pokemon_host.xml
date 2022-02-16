@@ -37,5 +37,6 @@
         app:headerLayout="@layout/header_trainer"
         app:menu="@menu/menu_trainer"
         android:fitsSystemWindows="true"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"
+        android:visibility="visible"/>
 </androidx.drawerlayout.widget.DrawerLayout>

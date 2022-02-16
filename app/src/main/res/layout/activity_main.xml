@@ -29,6 +29,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
         android:hint="Usuario"
+        android:text="marce"
         android:textSize="60px"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -41,12 +42,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:text="1234"
         android:hint="Contraseña"
-        android:textSize="60px"
-        android:textColorHint="@color/white"
+        android:inputType="textPassword"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="60px"
         app:layout_constraintLeft_toLeftOf="@id/txt_log_usuario"
         app:layout_constraintRight_toRightOf="@id/txt_log_usuario"
         app:layout_constraintTop_toBottomOf="@+id/txt_log_usuario" />
@@ -58,8 +61,21 @@
         android:text="Inicia Sesión"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/black"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="@id/txt_log_password"
         app:layout_constraintRight_toRightOf="@id/txt_log_password"
         app:layout_constraintTop_toBottomOf="@+id/txt_log_password" />
+
+    <Button
+        android:id="@+id/btn_log_crea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crea Cuenta"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/black"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="@id/btn_log_inicia"
+        app:layout_constraintRight_toRightOf="@id/btn_log_inicia"
+        app:layout_constraintTop_toBottomOf="@id/btn_log_inicia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

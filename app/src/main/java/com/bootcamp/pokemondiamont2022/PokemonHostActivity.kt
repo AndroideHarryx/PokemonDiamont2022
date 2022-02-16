@@ -1,5 +1,6 @@
 package com.bootcamp.pokemondiamont2022
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -27,7 +28,6 @@ class PokemonHostActivity : AppCompatActivity(){
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.hide()
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
@@ -37,6 +37,7 @@ class PokemonHostActivity : AppCompatActivity(){
                     .commit()
                 R.id.miItem2 -> Toast.makeText(applicationContext,
                     "Clicked Item 2",Toast.LENGTH_SHORT).show()
+
             }
             true
         }

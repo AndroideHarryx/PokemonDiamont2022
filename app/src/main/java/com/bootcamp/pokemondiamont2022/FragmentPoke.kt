@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bootcamp.pokemondiamont2022.api.PokeApiDAO
-import com.bootcamp.pokemondiamont2022.models.PokemonModels
+import android.widget.ImageView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bootcamp.pokemondiamont2022.api.PokeApi
+import com.bootcamp.pokemondiamont2022.models.PokemonList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,8 +21,10 @@ private const val ARG_PARAM2 = "param2"
 class FragmentPoke : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    private var pokemonModels: PokemonModels?= null
-    lateinit var pokeconec: PokeApiDAO
+    private var pokemonListModels: PokemonList?= null
+    lateinit var pokeconec: PokeApi
+    lateinit var pokeAdapter: PokeAdapter
+    lateinit var recyView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,38 +43,32 @@ class FragmentPoke : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pokeconec = RetrofitClient.getInstance()
-        getPokemonInfo("pikachu")
-    }
 
-    fun getPokemonInfo(pokemon: String){
-        pokeconec.getPokemon(pokemon).enqueue(
-            object : Callback<PokemonModels> {
-                override fun onResponse(call: Call<PokemonModels>, response: Response<PokemonModels>) {
+        var activityParent = activity as PokemonHostActivity
+        pokeconec = RetrofitClient.getInstance()
+
+        //llamamos a los pokemon de acuerdo a dos parametros, limit sería la cantidad total a listar
+        //y start sería desde que pokemon empieza a listar
+        pokeconec.getPokemonList("386","0").enqueue(
+            object : Callback<PokemonList> {
+                override fun onResponse(call: Call<PokemonList>, response: Response<PokemonList>) {
                     Log.d("RESPONSE", response.body().toString())
 
                     if(response.body() != null) {
-                        pokemonModels = response.body()
+                        pokemonListModels = response.body()
                     }
+                    pokeAdapter = PokeAdapter(pokemonListModels?.results as List<PokemonList.Result>)
+                    recyView = view.findViewById(R.id.rv_pokedex)
+                    recyView.layoutManager = GridLayoutManager(activityParent, 3)
+                    recyView.adapter = pokeAdapter
                 }
-                override fun onFailure(call: Call<PokemonModels>, t: Throwable) {
+                override fun onFailure(call: Call<PokemonList>, t: Throwable) {
                     Log.d("Error", t.toString())
                 }
             }
-//            object: Callback<PokemonModels>{
-//                override fun onResponse(call: Call<PokemonModels>, response: Response<PokemonModels>) {
-//                    Log.d("RESPONSE", response.body().toString())
-//
-//                    if(response.body() != null) {
-//                        pokemonModels = response.body()
-//                    }
-//                }
-//                override fun onFailure(call: Call<PokemonModels>, t: Throwable) {
-//
-//                }
-//            }
         )
     }
+
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
