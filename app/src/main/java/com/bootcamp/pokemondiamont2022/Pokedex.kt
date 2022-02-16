@@ -8,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.bootcamp.pokemondiamont2022.api.PokeApi
 import com.bootcamp.pokemondiamont2022.models.PokemonFormsModel
-import com.bootcamp.pokemondiamont2022.models.PokemonModel
+import com.bootcamp.pokemondiamont2022.models.SimplePokemon
 import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,15 +34,16 @@ class Pokedex : Fragment() {
     private var param2: String? = null
     lateinit var rfConnection: PokeApi
     lateinit var imag: ImageView
-    private var pokemonModel: PokemonModel? = null
+    private var pokemonModel: SimplePokemon? = null
+    lateinit var adaptador: PokeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
         }
+
     }
 
 
@@ -55,45 +58,53 @@ class Pokedex : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val rec = view.findViewById<RecyclerView>(R.id.rv_pokemon)
+
+
+        rec.apply{
+            layoutManager = LinearLayoutManager(context)
+            adapter = adaptador
+        }
 
         rfConnection = RetrofitClient.getInstance()
-        getPokemonInfo("pikachu")
-        imag = view.findViewById(R.id.imagen_pokemon)
+        //imag = view.findViewById(R.id.imagen_pokemon)
 
-        Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(imag)
+        //Picasso.get().load("https://i.imgur.com/DvpvklR.png").into(imag)
+        getPokemonInfo()
 
         Activity().onBackPressed()
 
     }
 
-    fun getPokemonInfo(pokemon: String){
-        rfConnection.getPokemon("pikachu").enqueue(
-            object: Callback<PokemonModel> {
-                override fun onResponse(call: Call<PokemonModel>, response: Response<PokemonModel>){
-                    Log.d("Response", response.body().toString())
+    fun getPokemonInfo(): List<SimplePokemon> {
+        rfConnection.getPokemonList(20, 0).enqueue(
+            object: Callback<SimplePokemon> {
+                override fun onResponse(call: Call<SimplePokemon>, response: Response<SimplePokemon>){
+
+                    Log.d("PROBANDO", response.body().toString())
+
 
                     if(response.body() != null){
                         pokemonModel = response.body()
+                        adaptador = PokeAdapter(pokemonModel.results)
+                        /*
+                        fun getNumber() :Int{
+                            val urlPartes: List<String> = pokemonModel.results[]!!.url!!.split("/")
+                            return urlPartes[urlPartes.size-1].toInt()
+                        }
+                        */
                     }
                 }
-                override fun onFailure(call: Call<PokemonModel>, t: Throwable){
+                override fun onFailure(call: Call<SimplePokemon>, t: Throwable){
 
                 }
             }
         )
+
     }
 
     fun getPokemonForms(pokemon: String){
-        rfConnection.getPokemonForms("pikachu").enqueue(
-            object : Callback<PokemonFormsModel>{
-                override fun onResponse(call: Call<PokemonFormsModel>, response: Response<PokemonFormsModel>){
-                    Log.d("RESPONSE", response.body().toString())
-                }
-                override fun onFailure(call: Call<PokemonFormsModel>, t: Throwable){
 
-                }
-            }
-        )
     }
 
 

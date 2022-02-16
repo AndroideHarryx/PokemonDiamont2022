@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClient {
 
     companion object {
-        private val BASE_URL = "https://pokeapi.co"
+        private val BASE_URL = "https://pokeapi.co/api/v2/"
         private var INSTANCE: PokeApi? = null
 
         @Synchronized
