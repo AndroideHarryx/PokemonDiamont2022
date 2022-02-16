@@ -4,16 +4,27 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bootcamp.pokemondiamont2022.pokemon.PokemonList
+import com.squareup.picasso.Picasso
 
-class PokemonAdapter (var pokemonListList: List<PokemonList.Result>) : RecyclerView.Adapter<PokemonAdapter.PokemonHolder>(){
+class PokemonAdapter (var pokemonListList: List<PokemonList.Result?>?) : RecyclerView.Adapter<PokemonAdapter.PokemonHolder>(){
 
     inner class PokemonHolder (view: View): RecyclerView.ViewHolder(view){
-        var timeTextView : TextView = view.findViewById(R.id.pokemon_text_view)
-        fun bind(elementList: PokemonList.Result){
-            timeTextView.text = elementList.name
+        var timeTextView : TextView = view.findViewById(R.id.pokemon_name)
+        var pokemonImage : ImageView = view.findViewById(R.id.pokemon_image)
+        lateinit var pokemonUrlList : List<String>
+        var pokemonImageId = ""
+        fun bind(elementList: PokemonList.Result?){
+            timeTextView.text = elementList?.name
+            pokemonUrlList = elementList!!.url!!.split("/")
+            pokemonImageId = pokemonUrlList[pokemonUrlList.size-2]
+            Log.d("pokemonUrlList", pokemonUrlList.toString())
+            Picasso.get()
+                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+pokemonImageId+".png")
+                .into(pokemonImage)
         }
     }
 
@@ -25,11 +36,12 @@ class PokemonAdapter (var pokemonListList: List<PokemonList.Result>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: PokemonHolder, position: Int) {
-        holder.bind(pokemonListList[position])
+        holder.bind(pokemonListList?.get(position))
     }
 
     override fun getItemCount(): Int {
-        return pokemonListList.size
+        Log.d("pokemonListList.size",pokemonListList?.size.toString())
+        return pokemonListList?.size!!
     }
 
 }

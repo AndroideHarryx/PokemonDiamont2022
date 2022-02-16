@@ -1,9 +1,11 @@
 package com.bootcamp.pokemondiamont2022.fragment
 
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.PointerIcon
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -37,6 +39,7 @@ class PokedexFragment : Fragment() {
 
     lateinit var retroFitConnection: PokeApi
     private var pokemonListModel: PokemonList?= null
+//    lateinit var pokemonImage : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +59,7 @@ class PokedexFragment : Fragment() {
 
 
         retroFitConnection = RetrofitClient.getInstance()
-        retroFitConnection.getPokemonList("20","20").enqueue(
+        retroFitConnection.getPokemonList("10","20").enqueue(
 
             object : Callback<PokemonList> {
                 override fun onResponse(call: Call<PokemonList>, response: Response<PokemonList>) {
@@ -65,11 +68,10 @@ class PokedexFragment : Fragment() {
                     if(response.body() != null) {
                         pokemonListModel = response.body()
                     }
-                    pokemonAdapter = PokemonAdapter(pokemonListModel?.results as List<PokemonList.Result>)
+                    pokemonAdapter = PokemonAdapter(pokemonListModel?.results)
                     recyclerVariable = view.findViewById(R.id.recycler_container)
                     recyclerVariable.layoutManager = LinearLayoutManager(activityParent, LinearLayoutManager.VERTICAL, false)
                     recyclerVariable.adapter = pokemonAdapter
-                    //TODO: enviar el pokemonModel al Adapter para crear los recyclers
                 }
                 override fun onFailure(call: Call<PokemonList>, t: Throwable) {
                     Log.d("Error", t.toString())
