@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_pokemon_host.*
 import kotlinx.android.synthetic.main.content_host.*
@@ -27,7 +28,7 @@ class PokemonHostActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         navView.setNavigationItemSelectedListener(this)
 
         /******/
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open, R.string.close)
         toggle.isDrawerIndicatorEnabled = true
         drawerlayout.addDrawerListener(toggle)
@@ -38,7 +39,7 @@ class PokemonHostActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_pokedex -> {
-                txtbienvenida.setText("")
+//                txtbienvenida.setText("")
                 val frc_pokedex = PokemonDescriptionAoF.newInstance("","")
                 supportFragmentManager
                     .beginTransaction()

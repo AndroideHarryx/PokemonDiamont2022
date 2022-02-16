@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PokemonDescriptionAoF"
-    android:id="@+id/fr_pokemonDescriotion">
+    android:id="@+id/fr_pokemonDescriotion"
+    android:background="#C9FAF2">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -20,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

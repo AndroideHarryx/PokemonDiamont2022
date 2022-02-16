@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 class RetrofitClient {
@@ -33,6 +34,9 @@ interface PokeApi{
 
     @GET("/api/v2/pokemon-form/{name}/")
     fun getPokemonForms(@Path("name") name: String): Call<PokemonFormsModel>
+
+    @GET("/api/v2/pokemon/")
+    fun getPokemons(@Query("limit") limit: Int,@Query("offset")offset: Int): Call<Pokemons>//ver documentacion de retrofit/querys
 }
 
 data class PokemonModel(

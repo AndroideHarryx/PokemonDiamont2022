@@ -12,7 +12,6 @@
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
-        android:fontFamily="@font/pixelatedpusab"
         android:hint="User Name"
         android:inputType="textPersonName"
         android:textColor="#F80606"
@@ -31,7 +30,6 @@
         android:layout_marginTop="20dp"
         android:hint="e-mail"
         android:inputType="textEmailAddress"
-        android:fontFamily="@font/pixelatedpusab"
         android:textColorHint="#E44545"
         android:textColor="#F80606"/>
     <EditText
@@ -44,7 +42,6 @@
         android:layout_marginTop="20dp"
         android:hint="Fecha de nacimiento"
         android:inputType="text|date"
-        android:fontFamily="@font/pixelatedpusab"
         android:textColor="#F80606"
         android:textColorHint="#E44545"/>
     <EditText
@@ -58,7 +55,6 @@
         android:inputType="textPassword"
         android:hint="Password"
         android:textColor="#F80606"
-        android:fontFamily="@font/pixelatedpusab"
         android:textColorHint="#E44545"/>
     <EditText
         android:id="@+id/txt_pass2f"
@@ -71,8 +67,7 @@
         android:inputType="textPassword"
         android:hint="Repetir Password"
         android:textColorHint="#E44545"
-        android:textColor="#F80606"
-        android:fontFamily="@font/pixelatedpusab"/>
+        android:textColor="#F80606" />
     <Button
         android:id="@+id/btn_registrarf"
         android:layout_width="200dp"
@@ -85,33 +80,6 @@
         android:fontFamily="@font/pixelatedpusab"
         android:textColor="@color/white"
         android:background="@color/black"/>
-    <ImageView
-        android:id="@+id/img_poke1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/pokeball1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:id="@+id/img_poke2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/pokeball1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <ImageView
-        android:id="@+id/img_poke3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/pokeball1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageView
-        android:id="@+id/img_poke4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/pokeball1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

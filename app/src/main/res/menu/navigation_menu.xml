@@ -6,15 +6,5 @@
         android:id="@+id/item_pokedex"
         android:icon="@drawable/pokeball2"
         android:title="Pokedex" />
-    <item
-        android:icon="@drawable/superkeball"
-        android:title="Item" />
-    <item
-        android:icon="@drawable/ultraball"
-        android:title="Item" />
-    <item
-        android:id="@+id/item3"
-        android:icon="@drawable/masterball"
-        app:showAsAction="never"
-        android:title="Item3" />
+
 </menu>

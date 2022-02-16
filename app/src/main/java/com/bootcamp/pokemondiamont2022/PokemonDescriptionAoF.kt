@@ -1,10 +1,16 @@
 package com.bootcamp.pokemondiamont2022
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +27,16 @@ class PokemonDescriptionAoF : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    /****Recycler****/
+    lateinit var recyclerView: RecyclerView
+    lateinit var miadapter: AdapterHost
+    var datos = ArrayList<pokemon>()
+
+    /******api******/
+    lateinit var rfconnection: PokeApi
+
+    /****************************************/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +52,56 @@ class PokemonDescriptionAoF : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pokemon_description_ao, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = view.findViewById(R.id.recycler_poke)
+        recyclerView.layoutManager= LinearLayoutManager(activity)
+
+        /*****************/
+
+        rfconnection = RetrofitClient.getInstance()
+        /***************/
+
+        getPokemons(250,0)
+
+    }
+    ///////////////////////////////////
+    //////////////////////////
+
+    fun getPokemons(limit: Int,offset:Int){
+        rfconnection.getPokemons(limit,offset).enqueue(
+            object : Callback<Pokemons>{
+                override fun onResponse(call: Call<Pokemons>, response: Response<Pokemons>) {
+//                    Log.d("holi ", response.body()?.results?.get(10)?.url.toString())
+
+                    for (i in response.body()?.results?.indices!!){
+                        datos.add(pokemon(response.body()?.results?.get(i)?.url.toString(),response.body()?.results?.get(i)?.name.toString()))
+                    }
+
+                    Log.d("datos  ",datos.toString())
+                    miadapter= AdapterHost(datos){
+                        img, nombre ->
+                        val frc_description = ItemPokemon.newInstance(img,nombre)
+
+                    }
+                    recyclerView.apply {
+                        layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+                        adapter=miadapter
+                    }
+                }
+
+                override fun onFailure(call: Call<Pokemons>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+            }
+        )
+    }
+
+    ///////////////////////
+    /////////////////////////////////
+
 
     companion object {
         /**

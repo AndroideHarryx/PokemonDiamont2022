@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 import java.lang.Exception
 
 class RegisterActivity : AppCompatActivity() {
@@ -19,10 +21,10 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var bd: AppDatabase
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
 
         txt_userf=findViewById(R.id.txt_usuariof)
         txt_emailf=findViewById(R.id.txt_email)
