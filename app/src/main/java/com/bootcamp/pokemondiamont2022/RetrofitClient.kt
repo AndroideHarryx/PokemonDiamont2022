@@ -11,13 +11,12 @@ class RetrofitClient {
 
         @Synchronized
         fun getInstance(): PokeApiDAO{
-            if (INSTANCE == null){
+            if (INSTANCE == null)
                 INSTANCE = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(BASE_URL)
                     .build()
                     .create(PokeApiDAO::class.java)
-            }
             return INSTANCE as PokeApiDAO
         }
     }

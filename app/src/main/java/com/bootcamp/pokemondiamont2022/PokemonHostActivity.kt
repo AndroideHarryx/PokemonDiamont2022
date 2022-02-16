@@ -17,6 +17,8 @@ class PokemonHostActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pokemon_host)
+
+        var pokefragment = FragmentPoke.newInstance("","")
         drawerLayout=findViewById(R.id.drawerLayout)
         navView=findViewById(R.id.navView)
 
@@ -25,14 +27,14 @@ class PokemonHostActivity : AppCompatActivity(){
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
 
         navView.setNavigationItemSelectedListener {
-            val mifragmento = FragmentPoke()
             when(it.itemId){
-                R.id.miItem1 -> {supportFragmentManager.beginTransaction()
-                    .add(R.id.contiene_Recycler,mifragmento)
+                R.id.miItem1 -> supportFragmentManager.beginTransaction()
+                    .add(R.id.contiene_Recycler,pokefragment)
+                    .addToBackStack("null")
                     .commit()
-                }
                 R.id.miItem2 -> Toast.makeText(applicationContext,
                     "Clicked Item 2",Toast.LENGTH_SHORT).show()
             }
