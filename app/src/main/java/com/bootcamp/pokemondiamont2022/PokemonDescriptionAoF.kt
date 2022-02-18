@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_item_pokemon.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -84,6 +85,10 @@ class PokemonDescriptionAoF : Fragment() {
                     miadapter= AdapterHost(datos){
                         img, nombre ->
                         val frc_description = ItemPokemon.newInstance(img,nombre)
+                        parentFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.fr_pokedex,frc_description)
+                            .addToBackStack(null).commit()
 
                     }
                     recyclerView.apply {

@@ -51,9 +51,11 @@ class LoginActivity : AppCompatActivity() {
         var esCorrecto:Boolean = false
         if(usertxt.isNotEmpty() && passtxt.isNotEmpty()){
             //llamar a consulta bd
-                usuario1 = bd.usersDao().getByUser(usertxt,passtxt)
-                userdb=usuario1.user
-                passdb=usuario1.pass
+                if(bd.usersDao().getByUser(usertxt,passtxt)!=null){
+                    usuario1 = bd.usersDao().getByUser(usertxt,passtxt)
+                    userdb=usuario1.user
+                    passdb=usuario1.pass
+                }
             if(usertxt==userdb&&passtxt==passdb){
                 esCorrecto=true
             }else if(usertxt!=userdb && passtxt!=passdb){

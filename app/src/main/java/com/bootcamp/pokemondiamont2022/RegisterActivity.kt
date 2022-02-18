@@ -2,10 +2,7 @@ package com.bootcamp.pokemondiamont2022
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.squareup.picasso.Picasso
 import java.lang.Exception
 
@@ -47,9 +44,9 @@ class RegisterActivity : AppCompatActivity() {
                 //validar fecha, > 13
                 if(txt_pass1f==txt_pass2f && txt_pass2f.text.toString()!="" && txt_pass1f.text.toString()!=""&&txt_userf.text.toString()!=""){
                     addUser()
+                    Toast.makeText(this,"Exito",Toast.LENGTH_SHORT).show()
+                    finish()
                 }
-
-
             }
 
 

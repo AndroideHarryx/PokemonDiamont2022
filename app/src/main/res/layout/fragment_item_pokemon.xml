@@ -14,7 +14,7 @@
         android:id="@+id/txt_nombrepoke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre"
+        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_idpokedex"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
         android:id="@+id/txt_idpokedex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nroPokemon"
+        android:text="Nro: "
         app:layout_constraintStart_toEndOf="@+id/img_pokemon"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="10dp"
@@ -44,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="PS"
+        android:text="Height"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/img_pokemon"
         app:layout_constraintTop_toBottomOf="@+id/txt_tipos" />
 
@@ -52,7 +53,7 @@
         android:id="@+id/txt_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PP"
+        android:text="Weight"
         app:layout_constraintStart_toEndOf="@+id/img_pokemon"
         app:layout_constraintTop_toBottomOf="@+id/txt_height"
         android:layout_marginTop="10dp"
@@ -64,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="Tipos"
+        android:text="Type"
         app:layout_constraintStart_toEndOf="@+id/img_pokemon"
         app:layout_constraintTop_toBottomOf="@+id/txt_idpokedex" />
 

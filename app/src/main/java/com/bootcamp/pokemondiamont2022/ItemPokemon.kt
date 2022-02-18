@@ -67,10 +67,9 @@ class ItemPokemon : Fragment() {
 
         rfconnection = RetrofitClient.getInstance()
 
-      /*  getAPokemonInfo(nombre!!)
+        getAPokemonInfo(nombre!!)
         getPokemonForms(nombre!!)
         txt_pokemon.text=nombre
-*/
     }
 
 
@@ -83,10 +82,10 @@ class ItemPokemon : Fragment() {
                     Log.d("RESPONSE", response.body().toString())
 
                     if(response.body() != null) {
-                       /* txt_nropokemon.text="Nro: "+response.body()?.id.toString()
-                        txt_tipos.text="Tipo(s): "+response.body()?.types.toString()
+                        txt_nropokemon.text="Nro: "+response.body()?.id.toString()
+                        txt_tipos.text="Type primary: "+response.body()?.types?.get(0)?.type?.name.toString()
                         txt_height.text="Height: "+response.body()?.height.toString()
-                        txt_weight.text="Weight: "+response.body()?.weight.toString()*/
+                        txt_weight.text="Weight: "+response.body()?.weight.toString()
                     }
                 }
 
@@ -104,7 +103,7 @@ class ItemPokemon : Fragment() {
             object : Callback<PokemonFormsModel>{
                 override fun onResponse(call: Call<PokemonFormsModel>, response: Response<PokemonFormsModel>) {
                     Log.d("RESPONSE", response.body().toString())
-                    /*Picasso.get().load(response.body()?.sprites?.frontDefault.toString()).into(img_pokemon)*/
+                    Picasso.get().load(response.body()?.sprites?.frontDefault.toString()).into(img_pokemon)
                 }
 
                 override fun onFailure(call: Call<PokemonFormsModel>, t: Throwable) {
